@@ -5,10 +5,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.scss";
 import { EmailSignupForm } from "./challenges";
 
+const Home: React.FC<{}> = (): React.ReactElement => (
+  <div>
+    <h1>WISE INTROVERT</h1>
+  </div>
+);
+
 const App: React.FC<{}> = (): React.ReactElement => (
   <Router>
     <Switch>
       <Route exact path={"/email-signup-form"} component={EmailSignupForm} />
+      <Route exact path={"*"} component={Home} />
     </Switch>
   </Router>
 );
