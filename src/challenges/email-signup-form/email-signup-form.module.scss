@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$color-primary: #4c2982;
+$color-secondary: #f9d170;
+$color-bg: #f3f3f3;
+$color-text: #252525;
+$color-light: #f3f3f3;
+$color-success: #067973;
+$color-success-bg: #f5fffe;
+$color-error: #b71540;
+$color-error-bg: #fdeff3;
+
+.root {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  background: $color-bg;
+  font-family: "Inter";
+
+  .container {
+    height: 50%;
+    width: 20%;
+    min-width: 250px;
+
+    h1 {
+      color: $color-primary;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 1.75rem;
+    }
+
+    form {
+      .inputContainer {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          color: $color-primary;
+          font-weight: bold;
+          width: 100%;
+          margin-bottom: 0.5rem;
+        }
+
+        .inputRow {
+          width: 100%;
+          height: 45px;
+          background: #fff;
+          box-shadow: 1px 1px 16px #ddd;
+          display: grid;
+          grid-template-columns: minmax(auto, calc(100% - 45px)) 45px;
+
+          input {
+            outline: none;
+            border: none;
+            font-size: 1.1rem;
+            padding: 0 0.75rem;
+
+            &:focus {
+              border: 1px solid $color-primary;
+            }
+          }
+
+          button {
+            outline: none;
+            border: none;
+            cursor: pointer;
+            background: url("./assets/svg/arrow-right.svg"), $color-secondary;
+            background-size: 60%;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &:focus,
+            &:active {
+              border: 1px solid $color-primary;
+            }
+          }
+        }
+      }
+    }
+
+    .errorAlert {
+      width: 100%;
+      background: $color-error-bg;
+      border: 0.1rem solid $color-error;
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: 10% auto;
+      grid-gap: 1rem;
+      padding: 1rem;
+
+      .warningIcon {
+        width: 100%;
+        height: 100%;
+      }
+
+      .errorContentContainer {
+        height: 100%;
+        width: 100%;
+
+        h4 {
+          color: $color-error;
+        }
+
+        span {
+          color: $color-error;
+          font-size: 0.85rem;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .successAlert {
+      width: 100%;
+      background: $color-success-bg;
+      border: 0.1rem solid $color-success;
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: 10% auto;
+      grid-gap: 1rem;
+      padding: 1rem;
+
+      .checkIcon {
+        width: 100%;
+        height: 100%;
+      }
+
+      .successContentContainer {
+        height: 100%;
+        width: 100%;
+
+        h4 {
+          color: $color-success;
+        }
+
+        span {
+          color: $color-success;
+          font-size: 0.85rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
