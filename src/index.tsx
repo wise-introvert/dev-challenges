@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./index.scss";
-import { EmailSignupForm, DualtoneCard } from "./challenges";
+import { EmailSignupForm, DualtoneCard, ToggleSwitch } from "./challenges";
 
 const Home: React.FC<{}> = (): React.ReactElement => (
   <div>
@@ -16,6 +16,7 @@ const App: React.FC<{}> = (): React.ReactElement => (
     <Switch>
       <Route exact path={"/email-signup-form"} component={EmailSignupForm} />
       <Route exact path={"/dualtone-card"} component={DualtoneCard} />
+      <Route exact path={"/toggle-switch"} component={ToggleSwitch} />
       <Route exact path={"*"} component={Home} />
     </Switch>
   </Router>
